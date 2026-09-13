@@ -70,9 +70,19 @@ A native macOS keyboard launcher. One hotkey, fuzzy search across apps, files, w
 
 ## Download
 
-Grab `Bolt-x.y.z.zip` from the [latest release](https://github.com/PranavV205/bolt-raycast-alt/releases/latest), unzip, and drag `Bolt.app` to `/Applications`.
+Grab `Bolt-x.y.z.zip` from the [latest release](https://github.com/PranavV205/bolt/releases/latest), unzip, and drag `Bolt.app` to `/Applications`.
 
-First launch: macOS will warn that the app is from an unidentified developer (it is open source and self-signed, not notarized). Right-click `Bolt.app` > Open > Open, or approve it under System Settings > Privacy & Security. This is a one-time step, as is granting Accessibility for the window features (see [Permissions](#permissions-one-time)).
+### First launch
+
+Bolt is self-signed, not notarized (that needs a paid Apple Developer account). macOS will block the first launch with a warning that it cannot verify the developer. To approve it:
+
+1. Double-click `Bolt.app`. macOS blocks it, click **Done**.
+2. Open **System Settings > Privacy & Security**, scroll to the Security section.
+3. Next to "Bolt.app was blocked", click **Open Anyway** and confirm.
+
+This is a one-time step, as is granting Accessibility for the window features (see [Permissions](#permissions-one-time)).
+
+On macOS 15 Sequoia and later, Control-clicking the app and choosing Open no longer bypasses this. Apple removed that shortcut, so the Privacy & Security route above is the only one. On macOS 14 and earlier, Control-click > Open > Open still works.
 
 Prefer building from source? Read on.
 

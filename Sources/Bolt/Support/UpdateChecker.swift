@@ -6,8 +6,8 @@ import AppKit
 final class UpdateChecker {
     static let shared = UpdateChecker()
 
-    static let releasesPage = URL(string: "https://github.com/PranavV205/bolt-raycast-alt/releases/latest")!
-    private let apiURL = URL(string: "https://api.github.com/repos/PranavV205/bolt-raycast-alt/releases/latest")!
+    static let releasesPage = URL(string: "https://github.com/PranavV205/bolt/releases/latest")!
+    private let apiURL = URL(string: "https://api.github.com/repos/PranavV205/bolt/releases/latest")!
     private let stateFile = AppPaths.supportDir.appendingPathComponent("update-check.json")
 
     // Set when a newer release is known; FeatureCommandProvider surfaces it.
