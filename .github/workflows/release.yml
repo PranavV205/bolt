@@ -22,6 +22,9 @@ jobs:
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
           ditto -c -k --keepParent dist/Bolt.app "Bolt-${VERSION}.zip"
+          # Second copy under a stable name so the website can link to
+          # /releases/latest/download/Bolt.zip and never need updating.
+          cp "Bolt-${VERSION}.zip" Bolt.zip
 
       - name: Extract release notes from changelog
         run: |
@@ -34,6 +37,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
-          gh release create "$GITHUB_REF_NAME" "Bolt-${VERSION}.zip" \
+          gh release create "$GITHUB_REF_NAME" "Bolt-${VERSION}.zip" Bolt.zip \
             --title "Bolt ${VERSION}" \
             --notes-file notes.md
